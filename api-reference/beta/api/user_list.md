@@ -2,7 +2,7 @@
 
 Retrieve a list of user objects.
 
-> Note: Listing users returns a default set of properties only (*businessPhones, displayName, givenName, id, jobTitle, mail, mobilePhone, officeLocation, preferredLanguage, surname, userPrincipalName*). Use `$select` to get the other properties and relationships for the [user](../resources/user.md) object.
+> Note: Listing users returns a default set of properties only (*businessPhones, displayName, givenName, id, jobTitle, mail, mobilePhone, officeLocation, preferredLanguage, surname, userPrincipalName*). Use `$select` to get other properties and relationships of the user.
 
 ## Prerequisites
 One of the following **scopes** is required to execute this API:
@@ -14,6 +14,20 @@ GET /users
 ```
 ## Optional query parameters
 This method supports the [OData Query Parameters](http://developer.microsoft.com/en-us/graph/docs/overview/query_parameters) to help customize the response.
+
+> Note: Use `$select` to get the other properties and relationships for the [user](../resources/user.md) object. However, the following properties **cannot** be selected for the list users request e.g. ```/users?$select=aboutMe```. These properties can be selected in the [get users request](https://developer.microsoft.com/en-us/graph/docs/api-reference/beta/api/user_get).
+> - aboutMe
+> - birthday
+> - hireDate
+> - interests
+> - mySite
+> - pastProjects
+> - preferredName
+> - responsibilities
+> - schools
+> - skills
+> - mailboxSettings
+
 ## Request headers
 | Header       | Value|
 |:-----------|:------|
